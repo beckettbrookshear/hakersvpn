@@ -1,0 +1,3 @@
+server/hakersvpn-server
+*.pem
+.env

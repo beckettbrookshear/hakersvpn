@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Open test Chrome (load HakersVPN extension)",
+      "type": "shell",
+      "command": "google-chrome",
+      "args": [
+        "--user-data-dir=${env:HOME}/.hakersvpn-test-profile",
+        "chrome://extensions"
+      ],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent" }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HakersVPN Setup</title>
+  <link rel="stylesheet" href="setup.css">
+</head>
+<body>
+<main>
+  <h1>Set up your HakersVPN server</h1>
+  <p class="lead">Three steps, all in your browser. You'll rent a small server (about $4–6/month), and this page handles the rest.</p>
+
+  <section>
+    <h2><span class="n">1</span> Copy your setup script</h2>
+    <p>This creates a private password for your server and puts it in the script. The extension remembers it, so you never have to type it.</p>
+    <details>
+      <summary>Using your own domain? (optional)</summary>
+      <label>Domain <input id="domain" placeholder="vpn.example.com"></label>
+      <p class="hint">Point it at your server's IP first. Leave blank to use a free automatic address.</p>
+    </details>
+    <div class="row">
+      <button id="copy" class="primary">Copy setup script</button>
+      <button id="download">Download instead</button>
+      <span id="copied" class="ok" hidden>Copied ✓</span>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span> Create a server and paste the script</h2>
+    <p>Sign up with any of these providers, create a new server, and choose <strong>Ubuntu 24.04</strong> with the smallest size. Pick a location in the country you want to appear to browse from.</p>
+    <table>
+      <tr><th>Provider</th><th>Where to paste the script</th></tr>
+      <tr><td><a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a></td><td>Create Droplet → <em>Advanced options</em> → <em>Add initialization scripts</em></td></tr>
+      <tr><td><a href="https://www.hetzner.com/cloud" target="_blank" rel="noopener">Hetzner</a></td><td>Create Server → <em>Cloud config</em></td></tr>
+      <tr><td><a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a></td><td>Deploy → <em>Additional features</em> → <em>Cloud-Init User-Data</em></td></tr>
+    </table>
+    <p class="hint">If the provider has a separate firewall, allow incoming ports <strong>80</strong> and <strong>443</strong>.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span> Enter your server's IP address</h2>
+    <p>Once the server is created, copy its IPv4 address from the provider's dashboard.</p>
+    <div class="row">
+      <input id="ip" placeholder="203.0.113.10" inputmode="decimal">
+      <button id="check" class="primary">Save &amp; wait for server</button>
+    </div>
+    <p id="status" class="status" hidden></p>
+  </section>
+</main>
+<script src="setup.js"></script>
+</body>
+</html>

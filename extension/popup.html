@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HakersVPN</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>HakersVPN</h1>
+    <span id="status" class="pill off">Off</span>
+  </header>
+
+  <button id="toggle" class="big">Connect</button>
+  <p id="error" class="error" hidden></p>
+
+  <div class="ip">
+    <span>Your IP: <strong id="ip">–</strong></span>
+    <button id="checkIp" class="link">Check</button>
+  </div>
+
+  <p id="setupHint" class="setup-hint" hidden>No server yet. <button id="openSetup" class="link">Set one up →</button></p>
+
+  <details id="settings">
+    <summary>Server settings</summary>
+    <p class="small"><button id="openSetup2" class="link">Set up a new server</button></p>
+    <form id="form">
+      <label>Host <input id="host" required placeholder="vpn.example.com"></label>
+      <label>Port <input id="port" type="number" required value="8443" min="1" max="65535"></label>
+      <label>Username <input id="user" required autocomplete="off"></label>
+      <label>Password <input id="pass" type="password" required autocomplete="off"></label>
+      <label class="check"><input id="tls" type="checkbox" checked> Encrypt connection to server (TLS)</label>
+    </form>
+  </details>
+
+  <script src="popup.js"></script>
+</body>
+</html>
