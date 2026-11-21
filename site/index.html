@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HakersVPN</title>
+  <meta name="description" content="A browser VPN that sends your browser's traffic through your own server.">
+  <style>
+    :root {
+      --bg: #f7f7f8; --card: #fff; --fg: #1a1a1a; --muted: #5f6368; --border: #dcdcdf;
+      --accent: #1e8e3e; --accent-fg: #fff; --code: #f0f0f2;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #141517; --card: #1c1d1f; --fg: #ececec; --muted: #a0a0a6; --border: #34353a; --code: #26272b; --accent: #34a853; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    main { max-width: 680px; margin: 0 auto; padding: 48px 16px 72px; }
+    h1 { font-size: 34px; margin: 0 0 4px; letter-spacing: -0.02em; }
+    .lead { color: var(--muted); margin: 0 0 28px; font-size: 18px; }
+    .download { display: inline-block; background: var(--accent); color: var(--accent-fg); text-decoration: none;
+      font-weight: 600; padding: 12px 22px; border-radius: 10px; }
+    .download:hover { filter: brightness(1.08); }
+    .sub { color: var(--muted); font-size: 14px; margin: 10px 0 36px; }
+    section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; }
+    h2 { font-size: 19px; margin: 0 0 10px; }
+    ol { margin: 0; padding-left: 22px; }
+    li { margin: 6px 0; }
+    code { background: var(--code); padding: 1px 6px; border-radius: 5px; font-size: 0.92em; }
+    a { color: var(--accent); }
+    .note { color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>HakersVPN</h1>
+  <p class="lead">A browser VPN for Chrome, Edge and Brave. It sends your browser's traffic through your own server.</p>
+
+  <a class="download" href="hakersvpn-extension.zip" download>Download the extension (.zip)</a>
+  <p class="sub">Built from the latest code on GitHub · <a href="https://github.com/beckettbrookshear/hakersvpn">Source code</a></p>
+
+  <section>
+    <h2>Install on this computer</h2>
+    <ol>
+      <li>Download the .zip above and unzip it. Keep the unzipped folder somewhere permanent, because the browser loads the extension from it.</li>
+      <li>Open <code>chrome://extensions</code> (or <code>edge://extensions</code>, <code>brave://extensions</code>).</li>
+      <li>Turn on <strong>Developer mode</strong>.</li>
+      <li>Click <strong>Load unpacked</strong> and choose the unzipped <code>hakersvpn-extension</code> folder.</li>
+      <li>Click the HakersVPN icon, enter your server details, then click <strong>Connect</strong>.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>You also need a server</h2>
+    <p>The extension connects to a small proxy server that you run on a VPS. To set one up, follow the
+      <a href="https://github.com/beckettbrookshear/hakersvpn#readme">instructions in the README</a>.</p>
+    <p class="note">This only covers browser traffic. Other apps on your computer still connect directly.</p>
+  </section>
+
+  <section>
+    <h2>Updating</h2>
+    <p>Download the .zip again, replace the contents of the folder, then click the reload icon on the extension's card in <code>chrome://extensions</code>.</p>
+  </section>
+</main>
+</body>
+</html>
